@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       ],
       techStack: ['React', 'Express', 'MongoDB', 'TailwindCSS', 'TanStack Query', 'Stream'],
       liveDemo: 'https://chatapp.demo',
-      repository: 'https://github.com/sahidankanlayek/chat-app',
+      repository: 'https://github.com/SahidAnkanLayek/STREAMIFY.git',
       image: chatAppImage,
       category: 'Web App'
     },
@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
       ],
       techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
       liveDemo: 'https://tictactoe.demo',
-      repository: 'https://github.com/sahidankanlayek/tictactoe',
+      repository: 'https://github.com/SahidAnkanLayek/tic-tac-toe-react',
       image: ticTacToeImage,
       category: 'Game'
     },
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
         'Accessibility improvements'
       ],
       techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
-      liveDemo: 'https://bengalcoding.demo',
+      liveDemo: 'https://bejewelled-paprenjak-5b89bf.netlify.app/',
       repository: 'https://github.com/sahidankanlayek/bengal-coding',
       image: bengalCodingImage,
       category: 'Education'

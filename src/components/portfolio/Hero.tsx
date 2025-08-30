@@ -45,8 +45,8 @@ const Hero: React.FC = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a')
-    link.href = '/assets/Sahid_Ankan_Layek_CV.pdf'
-    link.download = 'Sahid_Ankan_Layek_CV.pdf'
+    link.href = '/assets/SahidAnkanLayek2025Resume.pdf'
+    link.download = 'SahidAnkanLayek2025Resume.pdf'
     link.click()
   }
 

@@ -42,7 +42,7 @@ const Achievements: React.FC = () => {
       category: 'Certification',
       description: 'Successfully completed industrial training on Full Stack Web Development covering modern web technologies and frameworks.',
       impact: 'Gained comprehensive understanding of end-to-end web development',
-      certificateUrl: '#',
+      certificateUrl: 'https://github.com/SahidAnkanLayek/MY_CERTIFICATE/blob/main/FSWD_CERTIFICATE2025.jpg',
       icon: <Award className="w-6 h-6" />,
       color: 'from-purple-500 to-purple-600'
     },
@@ -54,7 +54,7 @@ const Achievements: React.FC = () => {
       category: 'Certification',
       description: 'Completed 4h 8m comprehensive course covering Amazon Web Services fundamentals and developer tools.',
       impact: 'Enhanced cloud computing skills and AWS ecosystem knowledge',
-      certificateUrl: '#',
+      certificateUrl: 'https://github.com/SahidAnkanLayek/MY_CERTIFICATE/blob/main/CertificateOfCompletion_AWS%20Essential%20Training%20for%20Developers.pdf',
       icon: <Award className="w-6 h-6" />,
       color: 'from-orange-500 to-orange-600'
     },
@@ -66,7 +66,7 @@ const Achievements: React.FC = () => {
       category: 'Professional',
       description: 'Completed internship focusing on Artificial Intelligence, Machine Learning, and Web Designing technologies.',
       impact: 'Gained practical experience in AI/ML and modern web design principles',
-      certificateUrl: '#',
+      certificateUrl: 'https://github.com/SahidAnkanLayek/MY_CERTIFICATE/blob/main/Reconit.ai-certificate.pdf',
       icon: <Award className="w-6 h-6" />,
       color: 'from-teal-500 to-teal-600'
     },
@@ -78,7 +78,7 @@ const Achievements: React.FC = () => {
       category: 'Certification',
       description: 'Passed HackerRank skill certification test demonstrating proficiency in Python programming fundamentals.',
       impact: 'Validated Python programming skills through industry-recognized assessment',
-      certificateUrl: '#',
+      certificateUrl: 'https://github.com/SahidAnkanLayek/MY_CERTIFICATE/blob/main/download.png',
       icon: <Award className="w-6 h-6" />,
       color: 'from-green-500 to-green-600'
     },
