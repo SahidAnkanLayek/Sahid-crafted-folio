@@ -57,8 +57,8 @@ const Projects: React.FC = () => {
         'Score tracking system'
       ],
       techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
-      liveDemo: 'https://tictactoe.demo',
-      repository: 'https://github.com/SahidAnkanLayek/tic-tac-toe-react',
+      liveDemo: 'https://github.com/SahidAnkanLayek/Tic-Tac-Toe-Player-vs-Computer/blob/main/assets/demo_game.png',
+      repository: 'https://github.com/SahidAnkanLayek/tic-tac-grandeur.git',
       image: ticTacToeImage,
       category: 'Game'
     },
