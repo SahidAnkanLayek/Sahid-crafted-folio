@@ -1,6 +1,3 @@
-Got it — here’s the **complete `README.md` file** (ready to copy & paste into your repo). I cleaned up the fences and placeholders so it’s production-ready.
-
-
 # 🌐 Sahid Crafted Folio
 
 A beautifully crafted, responsive, and modern **developer portfolio website** built using **React + Vite + Tailwind CSS**.  
@@ -9,9 +6,7 @@ It showcases my technical skills, projects, and achievements — designed for sp
 ---
 
 ## 🚀 Live Demo  
-🔗 **Visit Now:** [https://sahid-crafted-folio.vercel.app](https://sahid-crafted-folio.vercel.app)  
-*(Replace with your actual deployment link if different)*
-
+🔗 **Visit Now:** (https://sahid-crafted-folio.vercel.app)  
 ---
 
 ## 🖋️ Overview
