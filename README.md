@@ -130,8 +130,8 @@ If you’d like to contribute:
 ## 📬 Contact
 
 👤 **Sahid A. Layek**
-📧 Email: [your-email@example.com](mailto:sahid.ankan.layek2020@example.com)
-💼 LinkedIn: [linkedin.com/in/sahid-layek](www.linkedin.com/in/sahid-ankan-layek-12444b326)
+📧 Email:mailto:sahid.ankan.layek2020@example.com
+💼 LinkedIn:www.linkedin.com/in/sahid-ankan-layek-12444b326
 
 ---
 
