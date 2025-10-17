@@ -49,8 +49,7 @@ A modern, responsive single-page portfolio website showcasing the technical expe
 
 - **Frontend:** [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/), [React](https://react.dev/), [shadcn/ui](https://ui.shadcn.com/), [Tailwind CSS](https://tailwindcss.com/)
 - **Development Tools:** [Node.js](https://nodejs.org/), [npm](https://www.npmjs.com/), [Git](https://git-scm.com/), [GitHub](https://github.com/)
-- **Deployment Platform:** [Lovable.dev](https://lovable.dev/)
-- **Core Technologies:** HTML5, CSS3, JavaScript
+- **Core Technologies:** HTML5, CSS3, Typescript,React.js
 
 ---
 
@@ -86,19 +85,6 @@ npm run dev
 Open [http://localhost:5173](http://localhost:5173) (or your Vite-specified port) in your browser.
 
 ---
-
-## 🛠️ Editing the Project
-
-You can update the site using one of the following methods:
-
-- **Lovable.dev:** Edit directly on Lovable for auto commits.
-- **Local IDE:** Use VS Code or similar, then push changes to GitHub.
-- **GitHub Web Editor:** Click the pencil icon on any file to edit in-browser.
-- **GitHub Codespaces:** Launch a codespace for a cloud environment.
-
----
-
-
 
 ## 🤝 Contributing
 
