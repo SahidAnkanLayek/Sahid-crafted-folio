@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 lg:pt-24"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20 lg:pt-24"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${heroBg})`,
         backgroundSize: 'cover',
@@ -70,82 +70,82 @@ const Hero: React.FC = () => {
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-60 h-60 sm:w-80 sm:h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-3 sm:px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-up">
-            <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl text-white font-bold leading-tight">
+          <div className="text-center lg:text-left space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-up">
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white font-bold leading-tight">
                 Hi, I'm{' '}
                 <span className="text-gradient bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Sahid Ankan Layek
                 </span>
               </h1>
               
-              <div className="h-16 flex items-center justify-center lg:justify-start">
-                <h2 className="text-2xl lg:text-3xl text-white/90 font-medium">
+              <div className="h-14 sm:h-16 flex items-center justify-center lg:justify-start">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl text-white/90 font-medium">
                   <span className="text-accent">{typewriterText}</span>
                   <span className="animate-pulse text-accent">|</span>
                 </h2>
               </div>
 
-              <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
                 Full-stack developer specializing in Java, Node, and React. I build clean, robust products—from secure backends to polished UIs—that scale and delight users.
               </p>
             </div>
 
             {/* Location & Contact Info */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/70">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-white/70 text-sm sm:text-base">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 <span>Kolkata, India</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <span>+91 8509549177</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Button 
                 onClick={handleDownloadCV}
-                className="btn-hero px-8 py-3 text-lg"
+                className="btn-hero px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg h-10 sm:h-12"
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Download CV
               </Button>
               
               <Button 
                 variant="outline"
                 onClick={() => scrollToSection('projects')}
-                className="px-8 py-3 text-lg bg-white/10 text-white border-white/30 hover:bg-white/20 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 backdrop-blur-sm"
+                className="px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg h-10 sm:h-12 bg-white/10 text-white border-white/30 hover:bg-white/20 dark:bg-white/10 dark:text-white dark:border-white/30 dark:hover:bg-white/20 backdrop-blur-sm"
               >
                 View Projects
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <a 
                 href="https://www.linkedin.com/in/sahid-ankan-layek-12444b326/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 glass hover:bg-primary/20 rounded-full transition-all duration-300 hover:scale-110"
+                className="p-2 sm:p-3 glass hover:bg-primary/20 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <Linkedin className="w-5 h-5 text-white" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </a>
               <a 
                 href="https://github.com/sahidankanlayek"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 glass hover:bg-primary/20 rounded-full transition-all duration-300 hover:scale-110"
+                className="p-2 sm:p-3 glass hover:bg-primary/20 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <Github className="w-5 h-5 text-white" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </a>
               <a 
                 href="mailto:sahid.ankan.layek2020@gmail.com"

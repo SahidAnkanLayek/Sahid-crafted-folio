@@ -68,27 +68,27 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
       
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 glass-strong border-b border-border/50">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div 
-              className="flex items-center space-x-3 cursor-pointer"
+              className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
               onClick={() => scrollToSection('home')}
             >
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-lg">
                 SAL
               </div>
-              <span className="font-semibold text-lg hidden sm:block">Sahid Ankan Layek</span>
+              <span className="font-semibold text-sm sm:text-lg hidden sm:block">Sahid Ankan Layek</span>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={cn(
-                    "relative px-3 py-2 text-sm font-medium transition-colors duration-300",
+                    "relative px-2 py-2 text-xs xl:text-sm font-medium transition-colors duration-300 whitespace-nowrap",
                     "hover:text-primary",
                     currentSection === item.id 
                       ? "text-primary" 
@@ -104,19 +104,19 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
             </nav>
 
             {/* Actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="relative overflow-hidden"
+                className="relative overflow-hidden h-9 w-9 sm:h-10 sm:w-10"
               >
                 <Sun className={cn(
-                  "h-5 w-5 transition-all duration-300",
+                  "h-4 w-4 sm:h-5 sm:w-5 transition-all duration-300",
                   isDark ? "rotate-90 scale-0" : "rotate-0 scale-100"
                 )} />
                 <Moon className={cn(
-                  "absolute h-5 w-5 transition-all duration-300",
+                  "absolute h-4 w-4 sm:h-5 sm:w-5 transition-all duration-300",
                   isDark ? "rotate-0 scale-100" : "-rotate-90 scale-0"
                 )} />
               </Button>
@@ -125,10 +125,10 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden"
+                className="lg:hidden h-9 w-9 sm:h-10 sm:w-10"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
               </Button>
             </div>
           </div>
@@ -137,13 +137,13 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden glass-strong border-t border-border/50 animate-fade-up">
-            <nav className="container mx-auto px-4 py-4 space-y-2">
+            <nav className="container mx-auto px-4 py-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={cn(
-                    "w-full text-left px-4 py-3 rounded-lg transition-colors duration-300",
+                    "w-full text-left px-3 py-2 sm:py-3 rounded-lg text-sm transition-colors duration-300",
                     "hover:bg-primary/10 hover:text-primary",
                     currentSection === item.id 
                       ? "bg-primary/10 text-primary" 

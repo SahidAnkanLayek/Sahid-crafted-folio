@@ -23,75 +23,78 @@ const Mentorship: React.FC = () => {
   ]
 
   return (
-    <section id="mentorship" className="py-12 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 animate-fade-up">
-          <h2 className="text-3xl font-bold mb-3">
+    <section id="mentorship" className="py-12 sm:py-16 lg:py-20 bg-secondary/30">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="text-center mb-8 sm:mb-12 animate-fade-up">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
             Mentorship & <span className="text-gradient">Teaching</span>
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
             Sharing knowledge and helping the next generation of developers grow
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto px-2 sm:px-0">
           {/* Main Mentorship Card */}
-          <div className="glass rounded-xl p-4 shadow-medium hover:shadow-strong transition-all duration-300 mb-6 animate-scale-in">
-            <div className="grid lg:grid-cols-2 gap-4 items-center">
+          <div className="glass rounded-xl p-4 sm:p-6 shadow-medium hover:shadow-strong transition-all duration-300 mb-6 sm:mb-8 animate-scale-in">
+            <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 items-center">
               {/* Content */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-accent/10 rounded-xl">
-                    <Users className="w-6 h-6 text-accent" />
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="p-2 bg-accent/10 rounded-xl flex-shrink-0">
+                    <Users className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Bengal Coding Academy</h3>
-                    <p className="text-accent font-semibold text-sm">Mentor & Technical Guide</p>
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-xl font-bold line-clamp-1">Bengal Coding Academy</h3>
+                    <p className="text-accent font-semibold text-xs sm:text-sm">Mentor & Technical Guide</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-3 h-3" />
-                    <span className="text-xs">August 2024 – May 2025</span>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-muted-foreground text-xs sm:text-sm">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span>August 2024 – May 2025</span>
                   </div>
                   <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
                   <span className="text-xs text-green-600 dark:text-green-400 font-medium">Currently Active</span>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                   As a mentor at Bengal Coding Academy, I assist students in their software engineering journey by 
                   resolving complex coding challenges, providing code reviews, and guiding them through best practices.
                 </p>
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-primary text-sm">Key Responsibilities:</h4>
+                  <h4 className="font-semibold text-primary text-xs sm:text-sm">Key Responsibilities:</h4>
                   <ul className="space-y-1">
                     <li className="flex items-start gap-2 text-xs text-muted-foreground">
                       <div className="w-1 h-1 bg-accent rounded-full mt-1.5 flex-shrink-0" />
-                      Providing personalized coding assistance and debugging support
+                      <span>Providing personalized coding assistance and debugging support</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs text-muted-foreground">
                       <div className="w-1 h-1 bg-accent rounded-full mt-1.5 flex-shrink-0" />
-                      Conducting code reviews and suggesting improvements
+                      <span>Conducting code reviews and suggesting improvements</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs text-muted-foreground">
                       <div className="w-1 h-1 bg-accent rounded-full mt-1.5 flex-shrink-0" />
-                      Mentoring students on project architecture and design patterns
+                      <span>Mentoring students on project architecture and design patterns</span>
                     </li>
                   </ul>
                 </div>
 
-                <Button asChild className="btn-accent text-xs py-2">
-                  <a href="https://bengalcodingacademy.com" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-3 h-3 mr-1" />
-                    Visit Academy
-                  </a>
-                </Button>
+                <a 
+                  href="https://bengalcodingacademy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 btn-accent px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-lg font-medium transition-all duration-300 w-full justify-center sm:w-auto"
+                >
+                  <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                  Visit Academy
+                </a>
               </div>
 
               {/* Visual Element */}
-              <div className="relative">
+              <div className="relative hidden sm:block">
                 <div className="relative z-10 glass-strong rounded-xl p-4 bg-gradient-to-br from-primary/10 to-accent/10">
                   <div className="text-center space-y-3">
                     <div className="w-12 h-12 mx-auto bg-gradient-primary rounded-full flex items-center justify-center text-white">

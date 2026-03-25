@@ -58,16 +58,16 @@
                      radial-gradient(ellipse at 80% 30%, hsl(188 95% 50% / 0.1) 0%, transparent 50%),
                      radial-gradient(ellipse at 40% 80%, hsl(214 100% 35% / 0.05) 0%, transparent 50%);
     
-    /* Typography Scale */
-    --font-size-xs: clamp(0.75rem, 0.71rem + 0.2vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 0.82rem + 0.27vw, 1rem);
-    --font-size-base: clamp(1rem, 0.93rem + 0.36vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 1.04rem + 0.43vw, 1.25rem);
-    --font-size-xl: clamp(1.25rem, 1.14rem + 0.54vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 1.32rem + 0.89vw, 2rem);
-    --font-size-3xl: clamp(1.875rem, 1.61rem + 1.34vw, 2.5rem);
-    --font-size-4xl: clamp(2.25rem, 1.89rem + 1.79vw, 3rem);
-    --font-size-5xl: clamp(2.5rem, 2.0rem + 2.5vw, 4rem);
+    /* Typography Scale - Optimized for mobile */
+    --font-size-xs: clamp(0.7rem, 0.65rem + 0.3vw, 0.875rem);
+    --font-size-sm: clamp(0.8rem, 0.75rem + 0.35vw, 1rem);
+    --font-size-base: clamp(0.95rem, 0.88rem + 0.4vw, 1.125rem);
+    --font-size-lg: clamp(1.05rem, 0.97rem + 0.45vw, 1.25rem);
+    --font-size-xl: clamp(1.2rem, 1.08rem + 0.6vw, 1.5rem);
+    --font-size-2xl: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+    --font-size-3xl: clamp(1.75rem, 1.45rem + 1.5vw, 2.5rem);
+    --font-size-4xl: clamp(2rem, 1.65rem + 2vw, 3rem);
+    --font-size-5xl: clamp(2.25rem, 1.75rem + 2.8vw, 4rem);
     
     /* Spacing System */
     --space-xs: clamp(0.5rem, 0.46rem + 0.18vw, 0.625rem);
@@ -345,5 +345,69 @@
   
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* Mobile-First Responsive Utilities */
+@media (max-width: 640px) {
+  /* Ensure touch targets are at least 44x44px on mobile */
+  button, a, input[type="button"], [role="button"] {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  /* Improve text readability on very small screens */
+  body {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  /* Better spacing on mobile */
+  h1, h2, h3, .text-2xl, .text-3xl, .text-4xl {
+    letter-spacing: -0.01em;
+  }
+
+  /* Improve form spacing on mobile */
+  input, textarea, select {
+    font-size: 1rem; /* Prevents zoom on iOS */
+    min-height: 2.5rem;
+  }
+
+  /* Better touch target for nav items */
+  nav button {
+    padding: 0.75rem;
+  }
+}
+
+/* Small screens optimization (< 375px) */
+@media (max-width: 374px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+  h2 { font-size: clamp(1.25rem, 3.5vw, 2rem); }
+  h3 { font-size: clamp(1rem, 3vw, 1.75rem); }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 500px) {
+  /* Reduce vertical padding on landscape mode */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .min-h-screen {
+    min-height: auto;
+  }
+}
+
+/* High DPI screens optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Thinner borders on high DPI screens */
+  .border, [class*="border-"] {
+    border-width: 0.5px;
   }
 }

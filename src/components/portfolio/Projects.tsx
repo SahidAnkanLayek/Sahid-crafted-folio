@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Play, X } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { ExternalLink, Github, Play, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
 import chatAppImage from '@/assets/project-chat-app.jpg'
 import ticTacToeImage from '@/assets/project-tictactoe.jpg'
 import bengalCodingImage from '@/assets/project-bengal-coding.jpg'
+import chestXrayImage from '@/assets/project-chest-xray.jpg'
 
 interface Project {
   id: string
@@ -21,10 +21,7 @@ interface Project {
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All')
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [cardTilt, setCardTilt] = useState({ x: 0, y: 0 })
-  const carouselRef = useRef<HTMLDivElement>(null)
 
   const projects: Project[] = [
     {
@@ -57,8 +54,8 @@ const Projects: React.FC = () => {
         'Score tracking system'
       ],
       techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
-      liveDemo: 'https://github.com/SahidAnkanLayek/Tic-Tac-Toe-Player-vs-Computer/blob/main/assets/demo_game.png',
-      repository: 'https://github.com/SahidAnkanLayek/tic-tac-grandeur.git',
+      liveDemo: 'https://tic-tac-toe-player-vs-computer.vercel.app/',
+      repository: 'https://github.com/SahidAnkanLayek/Tic-Tac-Toe-Player-vs-Computer',
       image: ticTacToeImage,
       category: 'Game'
     },
@@ -74,10 +71,27 @@ const Projects: React.FC = () => {
         'Accessibility improvements'
       ],
       techStack: ['HTML', 'CSS', 'JavaScript', 'React'],
-      liveDemo: 'https://bejewelled-paprenjak-5b89bf.netlify.app/',
+      liveDemo: 'https://bengalcodingacademy.com/',
       repository: 'https://github.com/sahidankanlayek/bengal-coding',
       image: bengalCodingImage,
       category: 'Education'
+    },
+    {
+      id: 'chest-xray-diagnostic',
+      title: 'Advanced Chest X-ray Diagnostic System',
+      description: 'A 3-tier microservice application integrating a PyTorch AI model to classify radiographic images and generate automated clinical reports.',
+      features: [
+        'Designed a secure 3-tier microservice architecture using FastAPI',
+        'Integrated a fine-tuned DenseNet-121 AI model for multi-label pathology classification',
+        'Implemented Grad-CAM for Explainable AI (XAI) visual heatmaps',
+        'Automated the generation of dynamic PDF clinical reports',
+        'Securely proxied radiographic images and patient metadata to a cloud-hosted inference engine'
+      ],
+      techStack: ['React', 'TypeScript', 'FastAPI', 'PyTorch', 'Microservices'],
+      liveDemo: 'https://advanced-chest-x-ray-diagnostic-kbdp.onrender.com/', // Add your live demo link here if hosted
+      repository: 'https://github.com/SahidAnkanLayek/Advanced-Chest-X-ray-Diagnostic-System2026', // Update with your actual repo link
+      image: chestXrayImage, 
+      category: 'Web App'
     }
   ]
 
@@ -87,45 +101,11 @@ const Projects: React.FC = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter)
 
-  const nextProject = () => {
-    setCurrentProjectIndex((prev) => 
-      prev === filteredProjects.length - 1 ? 0 : prev + 1
-    )
-  }
-
-  const prevProject = () => {
-    setCurrentProjectIndex((prev) => 
-      prev === 0 ? filteredProjects.length - 1 : prev - 1
-    )
-  }
-
-  const handleCardMouseMove = (e: React.MouseEvent, index: number) => {
-    if (index !== currentProjectIndex) return
-    
-    const card = e.currentTarget as HTMLElement
-    const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
-    
-    const rotateX = (y - centerY) / 10
-    const rotateY = (centerX - x) / 10
-    
-    setCardTilt({ x: rotateX, y: rotateY })
-  }
-
-  const handleCardMouseLeave = () => {
-    setCardTilt({ x: 0, y: 0 })
-  }
-
   useEffect(() => {
     if (filteredProjects.length > 0) {
-      setCurrentProjectIndex(0)
+      // Reset view when filter changes
     }
   }, [activeFilter, filteredProjects.length])
-
-  const currentProject = filteredProjects[currentProjectIndex]
 
   return (
     <section id="projects" className="py-12 bg-secondary/30">

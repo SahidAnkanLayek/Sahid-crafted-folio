@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react'
-import { Trophy, Award, Star, ChevronLeft, ChevronRight, ExternalLink, Calendar } from 'lucide-react'
+import React from 'react'
+import { Trophy, Award, Star, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
 
 interface Achievement {
   id: string
@@ -18,9 +17,6 @@ interface Achievement {
 }
 
 const Achievements: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const carouselRef = useRef<HTMLDivElement>(null)
-
   const achievements: Achievement[] = [
     {
       id: 'java-cert',
@@ -106,14 +102,6 @@ const Achievements: React.FC = () => {
     }
   ]
 
-  const nextAchievement = () => {
-    setCurrentIndex((prev) => (prev + 1) % achievements.length)
-  }
-
-  const prevAchievement = () => {
-    setCurrentIndex((prev) => (prev - 1 + achievements.length) % achievements.length)
-  }
-
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'Academic': return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200'
@@ -122,8 +110,6 @@ const Achievements: React.FC = () => {
       default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
     }
   }
-
-  const currentAchievement = achievements[currentIndex]
 
   return (
     <section id="achievements" className="py-12 bg-background">

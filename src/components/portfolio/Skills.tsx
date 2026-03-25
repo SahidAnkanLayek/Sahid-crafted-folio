@@ -60,60 +60,60 @@ const Skills: React.FC = () => {
   }
 
   return (
-    <section id="skills" className="py-12 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 animate-fade-up">
-          <h2 className="text-3xl font-bold mb-3">
+    <section id="skills" className="py-12 sm:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="text-center mb-8 sm:mb-12 animate-fade-up">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">
             Skills & <span className="text-gradient">Expertise</span>
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
             A comprehensive overview of my technical skills and proficiency levels across different domains
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6 animate-fade-up">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-8 animate-fade-up px-1">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`skill-chip ${activeFilter === category ? 'active' : ''}`}
+              className={`skill-chip text-xs sm:text-sm ${activeFilter === category ? 'active' : ''}`}
             >
               {category}
             </button>
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        {/* Skills Grid - Mobile optimized */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
           {filteredSkills.map((skill, index) => (
             <div
               key={skill.name}
-              className="glass rounded-lg p-4 hover:shadow-medium transition-all duration-300 hover:scale-105 animate-fade-up"
+              className="glass rounded-lg p-3 sm:p-4 hover:shadow-medium transition-all duration-300 hover:scale-105 animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex items-center gap-2 flex-col sm:flex-row w-full">
+                  <div className="p-1.5 bg-primary/10 rounded-lg text-primary flex-shrink-0">
                     {skill.icon}
                   </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-foreground">{skill.name}</h3>
-                    <p className="text-xs text-muted-foreground">{skill.category}</p>
+                  <div className="text-left w-full">
+                    <h3 className="text-xs sm:text-sm font-semibold text-foreground line-clamp-2">{skill.name}</h3>
+                    <p className="text-xs text-muted-foreground hidden sm:block">{skill.category}</p>
                   </div>
                 </div>
               </div>
 
               {/* Skill Level */}
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-muted-foreground">Proficiency</span>
-                  <span className="text-sm font-semibold text-foreground">{skill.level}</span>
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-muted-foreground">Level</span>
+                  <span className="font-semibold text-foreground">{skill.level}</span>
                 </div>
                 
-                <div className="w-full bg-secondary rounded-full h-2">
+                <div className="w-full bg-secondary rounded-full h-1.5 sm:h-2">
                   <div
-                    className={`h-2 rounded-full ${getLevelColor(skill.level)} transition-all duration-1000`}
+                    className={`h-1.5 sm:h-2 rounded-full ${getLevelColor(skill.level)} transition-all duration-1000`}
                     style={{
                       width: skill.level === 'Expert' ? '95%' : 
                              skill.level === 'Advanced' ? '80%' : 
@@ -124,8 +124,8 @@ const Skills: React.FC = () => {
               </div>
 
               {/* Skill Badge */}
-              <div className="mt-4">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white ${
+              <div className="mt-3">
+                <span className={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-medium text-white ${
                   skill.level === 'Expert' ? 'bg-green-500' :
                   skill.level === 'Advanced' ? 'bg-blue-500' :
                   skill.level === 'Intermediate' ? 'bg-yellow-500' : 'bg-gray-500'
@@ -138,16 +138,16 @@ const Skills: React.FC = () => {
         </div>
 
         {/* Skills Summary */}
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up">
-          <div className="text-center glass rounded-lg p-4">
-            <div className="text-2xl font-bold text-primary mb-1">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 animate-fade-up px-1">
+          <div className="text-center glass rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
               {skills.filter(s => s.level === 'Expert').length}
             </div>
-            <div className="text-xs text-muted-foreground">Expert Level</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Expert Level</div>
           </div>
           
-          <div className="text-center glass rounded-lg p-4">
-            <div className="text-2xl font-bold text-accent mb-1">
+          <div className="text-center glass rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-accent mb-1">
               {skills.filter(s => s.level === 'Advanced').length}
             </div>
             <div className="text-xs text-muted-foreground">Advanced Level</div>

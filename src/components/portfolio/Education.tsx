@@ -75,24 +75,24 @@ const Education: React.FC = () => {
   }, [])
 
   return (
-    <section id="education" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-4xl font-bold mb-4">
+    <section id="education" className="py-12 sm:py-16 lg:py-20 bg-background">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-up">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
             Educational <span className="text-gradient">Journey</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             My academic path in computer science and application development
           </p>
         </div>
 
         {/* Timeline Container */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-2 sm:px-0">
           {/* Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary transform md:-translate-x-0.5" />
+          <div className="absolute left-4 sm:left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary transform md:-translate-x-0.5" />
 
           {/* Timeline Items */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {educationData.map((item, index) => (
               <div
                 key={item.id}
@@ -102,7 +102,7 @@ const Education: React.FC = () => {
                 } flex flex-col md:flex-row items-center gap-8`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-medium transform md:-translate-x-1/2 z-10">
+                <div className="absolute left-4 sm:left-8 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-primary rounded-full border-4 border-background shadow-medium transform md:-translate-x-1/2 z-10">
                   {item.status === 'ongoing' && (
                     <div className="absolute inset-0 bg-primary rounded-full animate-ping" />
                   )}
@@ -110,7 +110,7 @@ const Education: React.FC = () => {
 
                 {/* Card */}
                 <div
-                  className={`w-full md:w-5/12 ml-16 md:ml-0 ${
+                  className={`w-full md:w-5/12 ml-12 sm:ml-16 md:ml-0 ${
                     visibleItems.has(item.id) 
                       ? index % 2 === 0 
                         ? 'animate-slide-in' 
@@ -118,10 +118,10 @@ const Education: React.FC = () => {
                       : 'opacity-0'
                   }`}
                 >
-                  <div className="glass rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105">
+                  <div className="glass rounded-xl p-4 sm:p-6 shadow-soft hover:shadow-medium transition-all duration-300 hover:scale-105">
                     {/* Status Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2 flex-wrap">
+                      <div className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold ${
                         item.status === 'ongoing' 
                           ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                           : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
@@ -129,35 +129,35 @@ const Education: React.FC = () => {
                         {item.status === 'ongoing' ? 'Currently Enrolled' : 'Completed'}
                       </div>
                       
-                      <GraduationCap className="w-6 h-6 text-primary" />
+                      <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
 
                     {/* Degree Info */}
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-foreground mb-2">
+                    <div className="mb-3 sm:mb-4">
+                      <h3 className="text-base sm:text-xl font-bold text-foreground mb-1 sm:mb-2">
                         {item.degree}
                       </h3>
-                      <p className="text-primary font-semibold mb-2">
+                      <p className="text-primary font-semibold text-sm sm:text-base mb-2">
                         {item.institution}
                       </p>
                       
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex flex-col gap-1 text-xs sm:text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {item.location}
+                          <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                          <span className="line-clamp-1">{item.location}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {item.duration}
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                          <span className="line-clamp-1">{item.duration}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* GPA/Ranking */}
                     {item.gpa && (
-                      <div className="mb-4 p-3 bg-accent/10 rounded-lg">
-                        <div className="flex items-center gap-2 text-accent font-semibold">
-                          <Award className="w-4 h-4" />
+                      <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-accent/10 rounded-lg">
+                        <div className="flex items-center gap-2 text-accent font-semibold text-xs sm:text-sm">
+                          <Award className="w-4 h-4 flex-shrink-0" />
                           {item.gpa}
                         </div>
                       </div>
@@ -165,12 +165,12 @@ const Education: React.FC = () => {
 
                     {/* Highlights */}
                     <div>
-                      <h4 className="font-semibold text-foreground mb-3">Key Focus Areas:</h4>
-                      <ul className="space-y-2">
+                      <h4 className="font-semibold text-foreground mb-2 text-xs sm:text-sm">Key Focus Areas:</h4>
+                      <ul className="space-y-1 sm:space-y-2">
                         {item.highlights.map((highlight, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0" />
-                            {highlight}
+                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-1.5 sm:mt-2 flex-shrink-0" />
+                            <span className="leading-relaxed">{highlight}</span>
                           </li>
                         ))}
                       </ul>
@@ -186,16 +186,16 @@ const Education: React.FC = () => {
         </div>
 
         {/* Education Summary */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-up">
-          <div className="text-center glass rounded-xl p-6">
-            <div className="text-3xl font-bold text-primary mb-2">2</div>
-            <div className="text-sm text-muted-foreground">Degrees Pursued</div>
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 animate-fade-up px-2 sm:px-0">
+          <div className="text-center glass rounded-xl p-4 sm:p-6">
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">2</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Degrees Pursued</div>
             <div className="text-xs text-muted-foreground mt-1">BCA Completed, MCA Ongoing</div>
           </div>
           
-          <div className="text-center glass rounded-xl p-6">
-            <div className="text-3xl font-bold text-accent mb-2">3+</div>
-            <div className="text-sm text-muted-foreground">Years of Study</div>
+          <div className="text-center glass rounded-xl p-4 sm:p-6">
+            <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 sm:mb-2">3+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Years of Study</div>
             <div className="text-xs text-muted-foreground mt-1">Computer Science Focus</div>
           </div>
           
