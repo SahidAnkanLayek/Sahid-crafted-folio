@@ -3,6 +3,9 @@ import { Moon, Sun, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
+// 1. IMPORT THE LOGO HERE (Make sure the path matches your folder structure)
+import logoImage from '../../assets/Screenshot 2026-03-25 223932.png'
+
 interface HeaderProps {
   currentSection: string
 }
@@ -25,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   useEffect(() => {
     const theme = localStorage.getItem('theme')
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
+
     if (theme === 'dark' || (!theme && systemPrefersDark)) {
       setIsDark(true)
       document.documentElement.classList.add('dark')
@@ -61,23 +64,30 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   return (
     <>
       {/* Scroll Progress */}
-      <div 
+      <div
         className="fixed top-0 left-0 h-1 bg-gradient-primary z-50 transition-all duration-300"
         style={{ width: `${scrollProgress}%` }}
       />
-      
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 glass-strong border-b border-border/50">
         <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div 
+            {/* Logo Section */}
+            <div
               className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
               onClick={() => scrollToSection('home')}
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-lg">
-                SAL
+              
+              {/* 2. USE THE IMPORTED LOGO HERE */}
+              <div className="w-13 h-13 sm:w-20 sm:h-20 rounded-lg overflow-hidden flex items-center justify-center transition-transform hover:scale-105">
+                <img
+                  src={logoImage} 
+                  alt="SAL Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
+
               <span className="font-semibold text-sm sm:text-lg hidden sm:block">Sahid Ankan Layek</span>
             </div>
 
@@ -90,8 +100,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
                   className={cn(
                     "relative px-2 py-2 text-xs xl:text-sm font-medium transition-colors duration-300 whitespace-nowrap",
                     "hover:text-primary",
-                    currentSection === item.id 
-                      ? "text-primary" 
+                    currentSection === item.id
+                      ? "text-primary"
                       : "text-muted-foreground"
                   )}
                 >
@@ -145,8 +155,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
                   className={cn(
                     "w-full text-left px-3 py-2 sm:py-3 rounded-lg text-sm transition-colors duration-300",
                     "hover:bg-primary/10 hover:text-primary",
-                    currentSection === item.id 
-                      ? "bg-primary/10 text-primary" 
+                    currentSection === item.id
+                      ? "bg-primary/10 text-primary"
                       : "text-muted-foreground"
                   )}
                 >
